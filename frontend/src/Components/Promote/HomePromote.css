@@ -1,0 +1,49 @@
+.promoteItem {
+    background-color: rgb(245, 245, 245);
+    height: 200px;
+    overflow: hidden;
+}
+
+.promoteItem:first-child {
+    margin-left: 0px
+}
+
+.promoteText {
+    top: 70px;
+    left: 25px;
+}
+
+h5.proTitle {
+    font-size: 16px !important;
+    line-height: 20px;
+    transition-duration: 0.5s;
+}
+
+.promoteImg {
+    overflow: hidden;
+}
+
+.promoteItem:hover .promoteImg img {
+    width: 100%;
+    transition-duration: 0.5s;
+}
+
+.promoteItem:hover h5.proTitle {
+    margin-top: 20px !important;
+    transition-duration: 0.5s;
+}
+
+.promoteImg img {
+    width: 98%;
+    transition-duration: 0.5s;
+}
+
+/* .promoteImg img:hover {
+    width: 110%;
+    transition-duration: 0.5s;
+} */
+@media only screen and (max-width: 600px) {
+    .promoteItem {
+        margin-bottom: 20px;
+    }
+}
