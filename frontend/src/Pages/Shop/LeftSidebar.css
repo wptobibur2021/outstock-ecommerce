@@ -1,0 +1,38 @@
+.accordion-button:not(.collapsed) {
+    color: #101010 !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+.accordion-item {
+    border-bottom: 1px solid rgba(0, 0, 0, .125) !important;
+    border: none !important;
+}
+
+.accordion-button:focus {
+    border-color: transparent !important;
+    box-shadow: none !important;
+}
+
+li.catNameList {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+li.catNameList:last-child {
+    border-bottom: none;
+}
+
+button.accordion-button {
+    padding-left: 0px !important;
+}
+
+.singleCategory {
+    margin-top: 25px;
+}
+
+.leftSidebarContainer h2 {
+    font-size: 25px;
+    font-weight: 300;
+}

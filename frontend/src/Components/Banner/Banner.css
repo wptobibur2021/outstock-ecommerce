@@ -41,19 +41,3 @@ button.bannerBtn:hover {
     background-color: #bc8246;
     color: #fff;
 }
-
-@media only screen and (max-width: 375px) {
-    .banner {
-        margin-bottom: 20px;
-    }
-
-    button.bannerBtn {
-        padding: 5px 10px;
-        margin-top: 4px;
-        font-size: 10px;
-    }
-
-    .bannerText h4 {
-        font-size: 13px;
-    }
-}

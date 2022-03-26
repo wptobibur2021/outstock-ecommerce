@@ -6,6 +6,10 @@
     margin-bottom: 20px
 }
 
+.discountImg a img {
+    width: 100%;
+}
+
 .discountImg-2 {
     position: absolute;
     top: 0;

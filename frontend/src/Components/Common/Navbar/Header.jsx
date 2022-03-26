@@ -1,6 +1,7 @@
 import React from 'react'
 import { Container, Row, Col, Image, Navbar, Nav } from 'react-bootstrap'
 import { FaSearch, FaCartPlus } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 import './Header.css'
 
 const Header = () => {
@@ -24,11 +25,13 @@ const Header = () => {
                                             style={{ maxHeight: '100px' }}
                                             navbarScroll
                                         >
-                                            <Nav.Link href="#home">Home</Nav.Link>
+                                            <Link to="/">Home</Link>
+                                            <Link to="/shop">Shop</Link>
+                                            {/* <Nav.Link href="#home">Home</Nav.Link>
                                             <Nav.Link href="#features">Shop</Nav.Link>
                                             <Nav.Link href="#pricing">Blog</Nav.Link>
                                             <Nav.Link href="#pricing">Pages</Nav.Link>
-                                            <Nav.Link href="">Conact</Nav.Link>
+                                            <Nav.Link href="">Conact</Nav.Link> */}
                                         </Nav>
                                     </Navbar.Collapse>
                                 </Container>
