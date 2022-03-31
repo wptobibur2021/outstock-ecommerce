@@ -17,25 +17,3 @@
 .carousel-indicators {
     display: none !important;
 }
-
-.btn-primary:hover {
-    color: #fff;
-    background-color: #201f1f !important;
-    border-color: #201f1f !important;
-}
-
-.btn-primary {
-    color: #fff;
-    background-color: #bc8246 !important;
-    border-color: #bc8246 !important;
-    border-radius: 0px !important;
-    padding: 8px 20px !important;
-    font-size: 18px !important;
-}
-
-
-.btn-check:focus+.btn,
-.btn:focus {
-    outline: 0;
-    box-shadow: none !important;
-}

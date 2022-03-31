@@ -6,7 +6,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 10px;
 }
 
 .cartArea {
@@ -35,4 +34,14 @@ nav.navbar.navbar-expand-lg.navbar-light {
     display: flex;
     align-items: center;
     justify-content: space-around;
+}
+
+a.menuItem {
+    margin-right: 30px;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+a.menuItem:last-child {
+    margin-right: 0px;
 }

@@ -5,7 +5,7 @@ import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 const Footer = () => {
     return (
         <Container fluid className="footerAreaContainer">
-            <Container>
+            <Container style={{ padding: '80px 0px' }}>
                 <Row>
                     <Col sm={12} md={6} lg={6}>
                         <Image className="footerLogo" src="/assets/img/logo-2.png" alt="OutStcok" />
