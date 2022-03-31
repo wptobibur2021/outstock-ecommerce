@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import Single from './Single'
-
+import useAPI from './../../Hooks/useAPI'
 const Products = () => {
+    const [products, setProducts] = useState([])
+    const { productsGet } = useAPI()
+    useEffect(() => {
+        productsGet(setProducts)
+    }, [])
     return (
         <Container fluid className="section-padding">
             <Container>
@@ -16,14 +21,9 @@ const Products = () => {
             </Container>
             <Container>
                 <Row>
-                    <Single></Single>
-                    <Single></Single>
-                    <Single></Single>
-                    <Single></Single>
-                    <Single></Single>
-                    <Single></Single>
-                    <Single></Single>
-                    <Single></Single>
+                    {
+                        products?.map((product) => <Single product={product}></Single>)
+                    }
                 </Row>
             </Container>
         </Container>

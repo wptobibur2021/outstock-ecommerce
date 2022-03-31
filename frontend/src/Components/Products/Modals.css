@@ -1,0 +1,36 @@
+img.modalImgSize {
+    width: 75px;
+}
+
+.nav-item {
+    cursor: pointer;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: transparent !important;
+    border: 1px solid #bc8246;
+    border-radius: 0px;
+}
+
+.nav-link {
+    padding: 0px !important;
+    margin-bottom: 20px !important;
+}
+
+.form-control:focus {
+    box-shadow: none !important;
+}
+
+.cartBtn {
+    margin-top: 30px;
+}
+
+.ModalQty {
+    display: flex;
+}
+
+.btn-close:focus {
+    box-shadow: none !important;
+}

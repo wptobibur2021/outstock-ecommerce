@@ -1,37 +1,42 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Single.css'
 import { Image } from 'react-bootstrap'
 import { FaEye, FaHeart, FaSlidersH, FaCartPlus } from "react-icons/fa"
-const Carousel = () => {
+import Modals from './Modals'
+const Carousel = ({ product }) => {
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+    const { name, price, image, image2 } = product;
     return (
         <div className="discountItem">
             <div className="discountImg p-relative">
                 <a href="https://techbd71.com">
-                    <Image src="/assets/img/product/product-1.jpg" fluid />
-                    <Image fluid className="discountImg-2" src="/assets/img/product/product-2.jpg" />
+                    <Image src={image} fluid />
+                    <Image fluid className="discountImg-2" src={image2} />
                 </a>
                 <div className="discountAction p-absolute">
-                    <a className="discountIcone" href="https://techbd71.com"><FaEye /></a>
-                    <a className="discountIcone" href="https://techbd71.com"><FaHeart /></a>
-                    <a className="discountIcone" href="https://techbd71.com"><FaSlidersH /></a>
+                    <li className="productIcone" onClick={handleShow}><FaEye /></li>
+                    <li className="productIcone"><FaHeart /></li>
+                    <li className="productIcone"><FaSlidersH /></li>
                 </div>
             </div>
 
             <div className="discountText">
                 <div className="discountInnerText">
                     <div className="discountTitle">
-                        <h4><a href="https://techbd71.com">Wooden container Bowl</a></h4>
+                        <h4><a href="https://techbd71.com">{name}</a></h4>
                     </div>
                     <div className="discountPrice p-relative">
-                        <span>$96.00</span>
+                        <span>${price}</span>
                         <span className="oldPrice">$110.00</span>
                     </div>
                     <div className="addToCart p-absolute">
-                        <a href="https://techbd71.com" className="addToCartText">Add to cart <FaCartPlus /></a>
+                        <li onClick={handleShow} className="addToCartText">Add to cart <FaCartPlus /></li>
                     </div>
                 </div>
-
             </div>
+            <Modals product={product} show={show} close={handleClose}></Modals>
         </div>
     )
 }

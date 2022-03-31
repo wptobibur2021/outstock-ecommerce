@@ -1,5 +1,5 @@
 import React from 'react'
-import { Image, Table } from 'react-bootstrap'
+import { Image, Table, FormControl } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { MdClear } from "react-icons/md";
 import './Cart.css'
@@ -41,9 +41,12 @@ const CartTable = () => {
                         <td className="cartTableTd">$120</td>
                         <td className="cartTableTd">
                             <div className="productQty">
-                                <div className="qtyMinus">-</div>
-                                <input className="qty" type="text" value="1"></input>
-                                <div className="qtyPlus">+</div>
+                                <span className="qtyMinus">-</span>
+                                <FormControl
+                                    className="qty"
+                                    value="1"
+                                />
+                                <span className="qtyPlus">+</span>
                             </div>
                         </td>
                         <td className="cartTableTd">$130.00</td>

@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Container, Col } from 'react-bootstrap'
 import Slider from "react-slick";
 import Carousel from './Carousel';
+import useAPI from './../../Hooks/useAPI'
 import './Carousel.css'
 const Discount = () => {
+    const [products, setProducts] = useState([])
+    const { productsGet } = useAPI()
+    useEffect(() => {
+        productsGet(setProducts)
+    }, [])
     const settings = {
         infinite: false,
         arrows: true,
@@ -51,27 +57,9 @@ const Discount = () => {
             </Container>
             <Container>
                 <Slider {...settings}>
-                    <Carousel></Carousel>
-                    <Carousel></Carousel>
-                    <Carousel></Carousel>
-                    <Carousel></Carousel>
-                    <Carousel></Carousel>
-                    <Carousel></Carousel>
-                    <Carousel></Carousel>
-                    <Carousel></Carousel>
-                    <Carousel></Carousel>
-                    <Carousel></Carousel>
-                    <Carousel></Carousel>
-                    <Carousel></Carousel>
-                    <Carousel></Carousel>
-                    <Carousel></Carousel>
-                    <Carousel></Carousel>
-                    <Carousel></Carousel>
-                    <Carousel></Carousel>
-                    <Carousel></Carousel>
-                    <Carousel></Carousel>
-                    <Carousel></Carousel>
-                    <Carousel></Carousel>
+                    {
+                        products?.map((product) => <Carousel product={product}></Carousel>)
+                    }
                 </Slider>
             </Container>
         </Container>
