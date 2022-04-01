@@ -49,16 +49,6 @@ const LeftSidebar = () => {
                         <li className="catNameList"><Link to="https://techbd71.com/">Brand Name</Link></li>
                     </ul>
                 </div>
-                <div className="sizeLists">
-                    <h2 className="leftSidebarTitle">Size</h2>
-                    <ul className="sizeList">
-                        <li><Link to="https://techbd71.com">S</Link></li>
-                        <li><Link to="https://techbd71.com">M</Link></li>
-                        <li><Link to="https://techbd71.com">L</Link></li>
-                        <li><Link to="https://techbd71.com">X</Link></li>
-                        <li><Link to="https://techbd71.com">XL</Link></li>
-                    </ul>
-                </div>
             </div>
         </Col>
     )

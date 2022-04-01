@@ -1,8 +1,12 @@
 import RouterNav from "./RouterNav/RouterNav";
-
+import { ReactNotifications } from 'react-notifications-component'
 function App() {
   return (
-    <RouterNav></RouterNav>
+    <>
+      <ReactNotifications />
+      <RouterNav>
+      </RouterNav>
+    </>
   );
 }
 

@@ -9,7 +9,6 @@ const Single = ({ product }) => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const { name, price, image, image2 } = product;
-    console.log('Product: ', product)
     return (
         <Col xm sm={6} md={3} lg={3}>
             <div className="productItem">

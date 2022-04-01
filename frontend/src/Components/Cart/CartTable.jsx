@@ -1,13 +1,13 @@
 import React from 'react'
-import { Image, Table, FormControl } from 'react-bootstrap'
+import { Image, Table } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { MdClear } from "react-icons/md";
 import './Cart.css'
-const CartTable = () => {
+const CartTable = ({ cart }) => {
     return (
         <>
             <div className="cartCaontainer">
-                <h2>Cart Products</h2>
+                <h5>Cart Products</h5>
             </div>
             <Table responsive={true} bordered={true}>
                 <thead>
@@ -21,37 +21,24 @@ const CartTable = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr className="cartTableTr">
-                        <td className="cartTableTd"><Image className="cartImg" src="./assets/img/product/product-4.jpg" alt='Bakix Furniture' /></td>
-                        <td className="cartTableTd"><Link to="">Bakix Furniture</Link></td>
-                        <td className="cartTableTd">$120</td>
-                        <td className="cartTableTd">
-                            <div className="productQty">
-                                <div className="qtyMinus">-</div>
-                                <input className="qty" type="text" value="1"></input>
-                                <div className="qtyPlus">+</div>
-                            </div>
-                        </td>
-                        <td className="cartTableTd">$130.00</td>
-                        <td className="cartTableTd"><MdClear style={{ cursor: "pointer" }} /></td>
-                    </tr>
-                    <tr className="cartTableTr">
-                        <td className="cartTableTd"><Image className="cartImg" src="./assets/img/product/product-4.jpg" alt='Bakix Furniture' /></td>
-                        <td className="cartTableTd"><Link to="">Bakix Furniture</Link></td>
-                        <td className="cartTableTd">$120</td>
-                        <td className="cartTableTd">
-                            <div className="productQty">
-                                <span className="qtyMinus">-</span>
-                                <FormControl
-                                    className="qty"
-                                    value="1"
-                                />
-                                <span className="qtyPlus">+</span>
-                            </div>
-                        </td>
-                        <td className="cartTableTd">$130.00</td>
-                        <td className="cartTableTd"><MdClear style={{ cursor: "pointer" }} /></td>
-                    </tr>
+                    {
+                        cart.carts?.map((cart, id) => (
+                            <tr className="cartTableTr">
+                                <td className="cartTableTd"><Image className="cartImg" src={cart.image} alt='Bakix Furniture' /></td>
+                                <td className="cartTableTd"><Link to="">{cart.name}</Link></td>
+                                <td className="cartTableTd">${cart.price}</td>
+                                <td className="cartTableTd">
+                                    <div className="productQty">
+                                        <div className="qtyMinus">-</div>
+                                        <input className="qty" type="text" value={cart.qty}></input>
+                                        <div className="qtyPlus">+</div>
+                                    </div>
+                                </td>
+                                <td className="cartTableTd">${cart.qty * cart.price}</td>
+                                <td className="cartTableTd" ><MdClear style={{ cursor: "pointer" }} /></td>
+                            </tr>
+                        ))
+                    }
                 </tbody>
             </Table>
         </>

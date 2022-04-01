@@ -36,15 +36,3 @@ button.accordion-button {
     font-size: 25px;
     font-weight: 300;
 }
-
-ul.sizeList li {
-    display: inline-block;
-    width: 35px;
-    height: 35px;
-    background-color: #dddddd6e;
-    margin-right: 15px;
-    text-align: center;
-    border-radius: 50%;
-    line-height: 30px;
-    cursor: pointer;
-}

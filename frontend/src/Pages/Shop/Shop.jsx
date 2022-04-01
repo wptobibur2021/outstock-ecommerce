@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Single from './Single'
 import './Single.css'
 import { Container, Row, Col } from 'react-bootstrap'
 import LeftSidebar from './LeftSidebar'
+import useAPI from './../../Hooks/useAPI'
 import { Link } from 'react-router-dom'
 const Shop = () => {
+    const [products, setProducts] = useState([])
+    const { productsGet } = useAPI()
+    useEffect(() => {
+        productsGet(setProducts)
+    }, [])
     return (
         <Container fluid>
             <div className="pageBanner" style={{
@@ -22,12 +28,9 @@ const Shop = () => {
                     <LeftSidebar></LeftSidebar>
                     <Col sm={12} md={9} lg={9}>
                         <Row>
-                            <Single></Single>
-                            <Single></Single>
-                            <Single></Single>
-                            <Single></Single>
-                            <Single></Single>
-                            <Single></Single>
+                            {
+                                products?.map((product) => <Single product={product}></Single>)
+                            }
                         </Row>
                     </Col>
                 </Row>

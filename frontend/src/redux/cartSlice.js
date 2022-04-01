@@ -1,22 +1,29 @@
 import { createSlice } from '@reduxjs/toolkit'
-// Create a new Slice
-const cartSlice = createSlice({
+
+const initialState = {
+    carts: [],
+    cartQty: 0,
+    total: 0
+}
+
+export const cartSlice = createSlice({
     name: 'cart',
-    initialState: {
-        carts: [],
-        cartQty: 0,
-        total: 0
-    },
+    initialState,
     reducers: {
         addCarts: (state, action) => {
-            state.carts.push(action.payload);
+            state.carts.push(action.payload)
             state.cartQty += 1
             state.total += action.payload.price * action.payload.qty
         },
-        reset: (state) => {
+        removeCart: (state, action) => {
+            console.log("Remove ID")
+        },
+        resetCart: (state) => {
             state = initialState
-        }
-    }
+        },
+    },
 })
-export const { addCarts, reset } = cartSlice.actions;
+
+// Action creators are generated for each case reducer function
+export const { addCarts, removeCart, resetCart } = cartSlice.actions
 export default cartSlice.reducer

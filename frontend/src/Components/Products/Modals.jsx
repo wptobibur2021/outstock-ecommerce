@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import { Modal, Nav, Tab, Col, Row, Container, Image, Button, FormControl } from 'react-bootstrap'
 import './Modals.css'
+import { addCarts } from './../../redux/cartSlice.js'
 import { useDispatch } from 'react-redux'
-import addCarts from './../../redux/cartSlice.js'
+import useNotifications from './../../Hooks/useNotification'
 const Modals = ({ show, close, product }) => {
+    const { successNotify } = useNotifications()
     const dispatch = useDispatch()
     const [qty, setQty] = useState(1)
     const { name, price, desc, gallery } = product;
@@ -21,9 +23,10 @@ const Modals = ({ show, close, product }) => {
     }
 
     const handleCart = () => {
-        dispatch(addCarts({ ...product, qty }))
+        dispatch(addCarts({ ...product, price, qty }))
         console.log('Add to cart')
         close();
+        successNotify()
     }
 
     return (
