@@ -3,7 +3,7 @@ const notifications = () => {
     const successNotify = () => {
         Store.addNotification({
             title: "Thank you!",
-            message: "Product add to cart successfully",
+            message: "Successfully added notification",
             type: "success",
             insert: "top",
             container: "top-right",

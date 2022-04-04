@@ -6,6 +6,7 @@ import CartItems from './CartItems'
 import NoCarts from './NoCarts'
 const Cart = () => {
     const carts = useSelector((state) => state.cart)
+    console.log('Carts: ', carts)
     return (
         <Container fluid>
             <div className="pageBanner" style={{
@@ -21,7 +22,7 @@ const Cart = () => {
             <Container className="section-padding">
                 <Row>
                     {
-                        carts > 0 ? <CartItems carts={carts}></CartItems> : <NoCarts></NoCarts>
+                        carts.carts?.length > 0 ? <CartItems carts={carts}></CartItems> : <NoCarts></NoCarts>
                     }
                 </Row>
             </Container>

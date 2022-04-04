@@ -3,9 +3,9 @@ import { Modal, Nav, Tab, Col, Row, Container, Image, Button, FormControl } from
 import './Modals.css'
 import { addCarts } from './../../redux/cartSlice.js'
 import { useDispatch } from 'react-redux'
-import useNotifications from './../../Hooks/useNotification'
+// import useNotifications from './../../Hooks/useNotification'
 const Modals = ({ show, close, product }) => {
-    const { successNotify } = useNotifications()
+    // const { successNotify } = useNotifications()
     const dispatch = useDispatch()
     const [qty, setQty] = useState(1)
     const { name, price, desc, gallery } = product;
@@ -13,7 +13,6 @@ const Modals = ({ show, close, product }) => {
         setQty(Number(qty) + 1)
     }
     const qtyMinus = () => {
-        console.log('qtyMinus')
         if (qty > 1) {
             setQty(qty - 1)
         }
@@ -24,9 +23,8 @@ const Modals = ({ show, close, product }) => {
 
     const handleCart = () => {
         dispatch(addCarts({ ...product, price, qty }))
-        console.log('Add to cart')
         close();
-        successNotify()
+        // successNotify()
     }
 
     return (

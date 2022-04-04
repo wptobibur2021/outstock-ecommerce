@@ -22,7 +22,7 @@ const Products = () => {
             <Container>
                 <Row>
                     {
-                        products?.map((product) => <Single product={product}></Single>)
+                        products?.map((product) => <Single key={product._id} product={product}></Single>)
                     }
                 </Row>
             </Container>

@@ -58,7 +58,7 @@ const Discount = () => {
             <Container>
                 <Slider {...settings}>
                     {
-                        products?.map((product) => <Carousel product={product}></Carousel>)
+                        products?.map((product, i) => <Carousel key={product._id} product={product}></Carousel>)
                     }
                 </Slider>
             </Container>
