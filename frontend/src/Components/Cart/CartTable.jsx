@@ -1,24 +1,16 @@
-import React, { useState } from 'react'
-import { Image, Table } from 'react-bootstrap'
+import React from 'react'
+import { Image, Table, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { MdClear } from "react-icons/md";
 import { useDispatch } from 'react-redux'
-import { removeCart } from '../../redux/cartSlice'
+
+import { removeCart, cartDecrement, cartIncrement, resetCart } from '../../redux/cartSlice'
 import './Cart.css'
 const CartTable = ({ cart }) => {
     //const quantity = cart.qty
     const dispatch = useDispatch()
-    const [qty, setQty] = useState('1')
-    const qtyPlus = () => {
-        setQty(Number(qty) + 1)
-    }
-    const qtyMinus = () => {
-        if (qty > 1) {
-            setQty(qty - 1)
-        }
-    }
     const handleChange = (e) => {
-        setQty(e.target.value)
+
     }
 
 
@@ -47,9 +39,9 @@ const CartTable = ({ cart }) => {
                                 <td className="cartTableTd">${cart.price}</td>
                                 <td className="cartTableTd">
                                     <div className="productQty">
-                                        <div className="qtyMinus" onClick={qtyMinus}>-</div>
+                                        <div className="qtyMinus" onClick={() => dispatch(cartDecrement(cart))}>-</div>
                                         <input onChange={handleChange} className="qty" type="text" value={cart.qty}></input>
-                                        <div className="qtyPlus" onClick={qtyPlus}>+</div>
+                                        <div className="qtyPlus" onClick={() => dispatch(cartIncrement(cart))}>+</div>
                                     </div>
                                 </td>
                                 <td className="cartTableTd">${cart.qty * cart.price}</td>
@@ -59,6 +51,7 @@ const CartTable = ({ cart }) => {
                     }
                 </tbody>
             </Table>
+            <Button onClick={() => dispatch(resetCart(cart))}>Clear Cart</Button>
         </>
     )
 }
