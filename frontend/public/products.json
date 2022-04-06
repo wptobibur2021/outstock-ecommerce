@@ -1,6 +1,25 @@
 [
     {
         "name":"Wooden container Bowl",
+        "_id": "12356756527",
+        "price": "30",
+        "desc": "Outstock is a premium Templates theme with advanced admin module. Its extremely customizable, easy to use and fully responsive and retina ready.",
+        "stock": "20",
+        "image": "./assets/img/product/product-8.jpg",
+        "image2": "./assets/img/product/product-2.jpg",
+        "gallery" : [
+            {
+                "id": "1", 
+                "img": "./assets/img/product/product-3.jpg"
+            },
+            {
+                "id": "2", 
+                "img": "./assets/img/product/product-9.jpg"
+            }
+        ]
+    },
+    {
+        "name":"Wooden container Bowl",
         "_id": "1235675627",
         "price": "30",
         "desc": "Outstock is a premium Templates theme with advanced admin module. Its extremely customizable, easy to use and fully responsive and retina ready.",

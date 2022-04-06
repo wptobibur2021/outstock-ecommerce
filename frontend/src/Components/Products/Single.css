@@ -101,7 +101,9 @@ span.oldPrice {
 .productPrice {
     transition: all 0.3s ease;
 }
-
+.oldPrice{
+    color: red;
+}
 .productItem:hover .productPrice {
     visibility: hidden;
     opacity: 0;

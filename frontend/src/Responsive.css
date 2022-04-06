@@ -1,4 +1,8 @@
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 375px) {
+    .mainMenu {
+        padding: 15px;
+    }
+
     .banner {
         margin-bottom: 20px;
     }
